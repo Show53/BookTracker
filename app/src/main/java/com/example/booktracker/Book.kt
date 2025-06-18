@@ -1,6 +1,7 @@
 package com.example.booktracker
 
 import Status
+import java.io.Serializable
 
 data class Book(
     val id: Int,
@@ -14,4 +15,4 @@ data class Book(
     val rating: Double,
     val isbn: String,
     val writeDate: String
-)
+)  : Serializable

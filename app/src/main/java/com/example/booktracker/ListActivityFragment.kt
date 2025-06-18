@@ -79,15 +79,19 @@ class ListActivityFragment : Fragment() {
             )
         )
 
-//        val adapter = CurrentBooksActivityAdapter(sampleData) { combinedItem ->
-            // Обработка клика по карточке
-            // Открываем DetailFragment с передачей данных
-//            val fragment = DetailedBookFragment.newInstance(combinedItem)
-//            parentFragmentManager.beginTransaction()
-//                .replace(R.id.nav_fragment, fragment)
-//                .addToBackStack(null)
-//                .commit()
-//        }
-//        recyclerView.adapter = adapter
+        val adapter = CurrentBooksActivityAdapter(sampleData) { combinedItem ->
+//             Обработка клика по карточке
+//             Открываем DetailFragment с передачей данных
+            val fragment = DetailedBookFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable("BOOK_DATA", combinedItem)
+                }
+            }
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_fragment, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        recyclerView.adapter = adapter
     }
 }

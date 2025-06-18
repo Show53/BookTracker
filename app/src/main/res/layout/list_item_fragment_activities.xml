@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/light_gray"
+    android:padding="8dp"
+    android:id="@+id/my_list_item"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_book_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <ImageView
+            android:id="@+id/list_item_book_image"
+            android:contentDescription="@string/list_item_book_cover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/placeholder_book_cover"
+            android:layout_width="113dp"
+            android:layout_height="167dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/list_item_book_main"
+            android:layout_width="250dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/list_item_book_name"
+                android:textColor="?attr/color_dynamic1"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="900"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/list_item_book_name">
+            </TextView>
+
+            <TextView
+                android:id="@+id/list_item_book_author"
+                android:layout_marginTop="8dp"
+                android:textColor="?attr/color_dynamic1"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/list_item_book_author">
+            </TextView>
+
+            <TextView
+                android:id="@+id/list_item_book_genre"
+                android:layout_marginTop="8dp"
+                android:textColor="?attr/color_dynamic1"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/list_item_book_genre">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/list_item_progression"
+            app:layout_constraintTop_toBottomOf="@+id/list_item_book_main"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="32dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/list_item_datetime_start_reading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?attr/color_dynamic1"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif"
+                    android:textFontWeight="500"
+                    android:text="@string/list_item_datetime_start_reading"/>
+
+                <TextView
+                    android:id="@+id/list_item_datetime_data"
+                    android:layout_marginStart="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?attr/color_dynamic1"
+                    android:textSize="18sp"
+                    android:textAlignment="textEnd"
+                    android:fontFamily="sans-serif"
+                    android:textFontWeight="500"
+                    android:text="@string/list_item_datetime_data"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/list_item_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="?attr/color_dynamic1"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif"
+                    android:textFontWeight="500"
+                    android:text="@string/list_item_progress"/>
+
+                <LinearLayout
+                    android:id="@+id/list_item_progression_in_pages"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/list_item_progress_read_it_data"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="?attr/color_dynamic1"
+                        android:textSize="18sp"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="500"
+                        android:text="@string/list_item_read_it_data"/>
+
+                    <TextView
+                        android:id="@+id/list_item_progress_between"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="?attr/color_dynamic1"
+                        android:textSize="18sp"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="500"
+                        android:text="@string/list_item_progress_between"/>
+
+                    <TextView
+                        android:id="@+id/list_item_progress_total_data"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="?attr/color_dynamic1"
+                        android:textSize="18sp"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="500"
+                        android:text="@string/list_item_remained_data"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/list_item_progression_in_percents"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/list_item_progress_read_it_data_in_percents"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="?attr/color_dynamic1"
+                        android:textSize="18sp"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="500"
+                        android:text="@string/list_item_read_it_data_in_percents"/>
+
+                    <TextView
+                        android:id="@+id/list_item_progress_read_it_data_percents"
+                        android:layout_marginStart="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="?attr/color_dynamic1"
+                        android:textSize="18sp"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="500"
+                        android:text="@string/list_item_read_it_data_percents"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

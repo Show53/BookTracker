@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--Colors_light_theme-->
+    <color name="main_light_theme_color">#00B4D8</color>
+    <color name="main2_light_theme_color">#0096C7</color>
+    <color name="main3_light_theme_color">#0077B6</color>
+    <color name="main4_light_theme_color">#023E8A</color>
+    <color name="main5_light_theme_color">#03045E</color>
+<!--Colors_dark_theme-->
+    <color name="main_dark_theme_color">#FF9E00</color>
+    <color name="main2_dark_theme_color">#FF9100</color>
+    <color name="main3_dark_theme_color">#FF8500</color>
+    <color name="main4_dark_theme_color">#FF6D00</color>
+    <color name="main5_dark_theme_color">#FF5400</color>
+<!--Additional_colors-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#E8E8E8</color>
+
+
+
+
+</resources>

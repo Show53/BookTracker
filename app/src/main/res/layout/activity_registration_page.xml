@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_registration_page"
+    android:paddingHorizontal="16dp"
+    android:background="?attr/color_dynamic0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/registration_page_app_bar"
+        android:layout_marginTop="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/transparent"
+        android:paddingVertical="16dp"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/registration_page_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/registration_page_toolbar"
+                android:layout_width="match_parent"
+                android:background="?attr/color_dynamic0"
+                android:gravity="end"
+                android:layout_height="24dp"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:layout_collapseMode="pin" />
+
+            <TextView
+                android:id="@+id/registration_page_expanded_title"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="600"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:text="@string/registration_activity_bar_title"
+                android:textColor="?attr/color_dynamic1"
+                android:textSize="20sp" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/registration_page_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/registration_page_text_boxes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="32dp"
+                android:id="@+id/registration_page_text_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/registration_activity_email_text_input"
+                android:textColorHint="@color/gray"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_page_text_input_edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_text_input_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/registration_activity_login_text_input"
+                android:textColorHint="@color/gray"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_text_input_email">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_page_text_input_edit_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_text_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/registration_activity_password_text_input"
+                android:textColorHint="@color/gray"
+                app:boxBackgroundColor="@color/white"
+                app:passwordToggleTint="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_text_input_login">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_page_text_input_edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_text_input_repeat_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/registration_activity_rep_password_text_input"
+                android:textColorHint="@color/gray"
+                app:boxBackgroundColor="@color/white"
+                app:passwordToggleTint="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_text_input_password">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registration_page_text_input_edit_repeat_password"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_title_checkboxes"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_text_input_repeat_password"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/registration_activity_title_sex"
+                android:fontFamily="sans-serif"
+                android:textFontWeight="600"
+                android:textSize="20sp"
+                android:textColor="?attr/color_dynamic1"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_box_checkbox_1"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_title_checkboxes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="24dp">
+
+                <CheckBox
+                    android:id="@+id/registration_page_checkbox_1"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/ic_checkbox_off"
+                    android:padding="0dp"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textFontWeight="400"
+                    android:textColor="?attr/color_dynamic1"
+                    android:text="@string/registration_activity_check_box_1"
+                    app:layout_constraintStart_toEndOf="@+id/registration_page_checkbox_1"
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_box_checkbox_2"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_box_checkbox_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="24dp">
+
+                <CheckBox
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/registration_page_checkbox_2"
+                    android:layout_width="24dp"
+                    android:button="@drawable/ic_checkbox_off"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:padding="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textFontWeight="400"
+                    android:textColor="?attr/color_dynamic1"
+                    android:text="@string/registration_activity_check_box_2"
+                    app:layout_constraintStart_toEndOf="@+id/registration_page_checkbox_2"
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="16dp"
+                android:id="@+id/registration_page_box_checkbox_3"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_box_checkbox_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="24dp">
+
+                <CheckBox
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/registration_page_checkbox_3"
+                    android:layout_width="24dp"
+                    android:button="@drawable/ic_checkbox_off"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:padding="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textFontWeight="400"
+                    android:textColor="?attr/color_dynamic1"
+                    android:text="@string/registration_activity_check_box_3"
+                    app:layout_constraintStart_toEndOf="@+id/registration_page_checkbox_3"
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/registration_activity_button0"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/registration_activity_button_text_0"
+                android:textSize="16sp"
+                android:letterSpacing="0"
+                android:textFontWeight="700"
+                app:layout_constraintTop_toBottomOf="@id/registration_page_box_checkbox_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="?attr/color0"
+                android:textColor="@color/white"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+            <TextView
+                android:id="@+id/registration_page_text_privacy_policy"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/registration_activity_button0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/registration_activity_privacy_policy"
+                android:textAlignment="center"
+                android:textFontWeight="300"
+                android:textSize="12sp"
+                android:textColor="?attr/color_dynamic1"
+                android:layout_marginTop="32dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

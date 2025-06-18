@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_activity"
+        android:icon="@drawable/ic_book"
+        android:iconTint="?attr/color0"
+        android:title="@string/bottom_nav_menu_activities" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_user"
+        android:iconTint="@color/gray"
+        android:title="@string/bottom_nav_menu_user" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings"
+        android:iconTint="@color/gray"
+        android:title="@string/bottom_nav_menu_settings" />
+</menu>

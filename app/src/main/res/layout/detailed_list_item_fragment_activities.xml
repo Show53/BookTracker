@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detailed_list_item_fragment_activities"
+    android:paddingHorizontal="8dp"
+    android:background="?attr/color_dynamic0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/transparent"
+        android:paddingVertical="16dp"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/detailed_list_item_fragment_activities_collapsing_toolbar"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detailed_list_item_fragment_activities_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="?attr/color_dynamic0"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:layout_collapseMode="pin" />
+
+            <TextView
+                android:fontFamily="sans-serif"
+                android:id="@+id/detailed_list_item_fragment_activities_expanded_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:text="@string/detailed_list_item_fragment_activities_bar_title"
+                android:textColor="?attr/color_dynamic1"
+                android:textFontWeight="600"
+                android:textSize="21sp" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/detailed_list_item_fragment_activities_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayoutTextBoxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/detailed_list_item_fragment_activities_card_info"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:background="@drawable/ic_book_card_background"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/list_item_book_image"
+                    android:contentDescription="@string/list_item_book_cover"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/placeholder_book_cover"
+                    android:layout_width="113dp"
+                    android:layout_height="167dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/list_item_book_main"
+                    android:layout_width="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/list_item_book_name"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="900"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_name">
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="4dp"
+                            android:layout_gravity="center"
+                            android:padding="2.5dp"
+                            android:background="@drawable/ic_book_actions_background"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_action_favorite"
+                                android:contentDescription="@string/list_item_book_icon_action_favorite_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_action_active"
+                                android:contentDescription="@string/list_item_book_icon_action_current_text"
+                                android:layout_width="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_action_ready"
+                                android:contentDescription="@string/list_item_book_icon_action_compleate_text"
+                                android:layout_width="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/list_item_book_author"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif"
+                        android:textFontWeight="800"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/list_item_book_author">
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/list_item_book_rating"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_rating">
+                        </TextView>
+
+                        <ImageView
+                            android:id="@+id/list_item_book_icon_star"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="4dp"
+                            android:background="@drawable/ic_small_black_star"
+                            android:contentDescription="@string/list_item_book_icon_star_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/list_item_book_rating_data"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="4dp"
+                            android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_rating_data">
+                        </TextView>
+
+                        <LinearLayout
+                            android:id="@+id/list_item_book_rating_button"
+                            android:layout_marginStart="4dp"
+                            android:visibility="visible"
+                            android:padding="2.5dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_book_actions_background"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/list_item_book_rating_button_star"
+                                android:background="@drawable/ic_small_white_star"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/list_item_book_rating_button_star"
+                                android:background="@drawable/ic_small_white_star"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/list_item_book_rating_button_star"
+                                android:background="@drawable/ic_small_white_star"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/list_item_book_rating_button_star"
+                                android:background="@drawable/ic_small_white_star"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/list_item_book_rating_button_star"
+
+                                android:background="@drawable/ic_small_white_star"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/list_item_book_genre"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_genre_short">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/list_item_book_genre_data"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="4dp"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_genre_short_data">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/list_item_book_write_date"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_write_date">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/list_item_book_write_date_data"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="4dp"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_write_date_data">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/list_item_book_count_of_pages"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_count_of_pages">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/list_item_book_count_of_pages_data"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="4dp"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_count_of_pages_data">
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="250dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/list_item_book_isbn"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_isbn">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/list_item_book_isbn_data"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="4dp"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_item_book_isbn_data">
+                        </TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/list_item_progression"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_book_main"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/list_item_datetime_start_reading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:text="@string/list_item_datetime_start_reading"/>
+
+                        <TextView
+                            android:id="@+id/list_item_datetime_data"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textAlignment="textEnd"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:text="@string/list_item_datetime_data"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/list_item_progress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:text="@string/list_item_progress"/>
+
+                        <LinearLayout
+                            android:id="@+id/list_item_progression_in_pages"
+                            android:visibility="visible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/list_item_progress_read_it_data"
+                                android:layout_marginStart="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textAlignment="textEnd"
+                                android:fontFamily="sans-serif"
+                                android:textFontWeight="600"
+                                android:text="@string/list_item_read_it_data"/>
+
+                            <TextView
+                                android:id="@+id/list_item_progress_between"
+                                android:layout_marginStart="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textAlignment="textEnd"
+                                android:fontFamily="sans-serif"
+                                android:textFontWeight="600"
+                                android:text="@string/list_item_progress_between"/>
+
+                            <TextView
+                                android:id="@+id/list_item_progress_total_data"
+                                android:layout_marginStart="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textAlignment="textEnd"
+                                android:fontFamily="sans-serif"
+                                android:textFontWeight="600"
+                                android:text="@string/list_item_remained_data"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/list_item_progression_in_percents"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/list_item_progress_read_it_data_in_percents"
+                                android:layout_marginStart="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="?attr/color_dynamic1"
+                                android:textSize="18sp"
+                                android:textAlignment="textEnd"
+                                android:fontFamily="sans-serif"
+                                android:textFontWeight="500"
+                                android:text="@string/list_item_read_it_data_in_percents"/>
+
+                            <TextView
+                                android:id="@+id/list_item_progress_read_it_data_percents"
+                                android:layout_marginStart="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="?attr/color_dynamic1"
+                                android:textSize="18sp"
+                                android:textAlignment="textEnd"
+                                android:fontFamily="sans-serif"
+                                android:textFontWeight="500"
+                                android:text="@string/list_item_read_it_data_percents"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/list_item_current_page"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textAlignment="textEnd"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="700"
+                            android:text="@string/list_item_current_page"/>
+
+                        <TextView
+                            android:id="@+id/list_item_current_page_data"
+                            android:layout_marginStart="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif"
+                            android:textFontWeight="600"
+                            android:text="@string/list_item_current_page_data"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/detailed_list_item_fragment_activities_count_pages_text_input"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/detailed_list_item_fragment_activities_count_pages_text_input"
+                    android:textColorHint="@color/gray"
+                    app:boxBackgroundColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_progression">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/detailed_list_item_fragment_activities_count_pages_text_input_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/detailed_list_item_fragment_activities_button_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="?attr/color0"
+                    android:letterSpacing="0"
+                    android:text="@string/detailed_list_item_fragment_activities_button_0_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textFontWeight="700"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/detailed_list_item_fragment_activities_count_pages_text_input" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/fragmentContainer"
+                app:layout_constraintTop_toBottomOf="@id/detailed_list_item_fragment_activities_card_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fragment_activities_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"/>
+
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/detailed_list_item_fragment_activities_message_text_input"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/detailed_list_item_fragment_activities_message_text_input"
+                android:textColorHint="@color/gray"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragmentContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/detailed_list_item_fragment_activities_message_text_input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
